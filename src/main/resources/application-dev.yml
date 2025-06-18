@@ -1,0 +1,44 @@
+  spring:
+    datasource:
+      url: jdbc://localhost:5322/book_store
+      username: postgres
+      password: admin
+      driver-class-name: org.postgresql.Driver
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+      database: postgresql
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+    mail:
+      host: localhost
+      port: 1025
+      username: josh
+      password: josh
+      properties:
+        mail:
+          smtp:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimout: 5000
+          timeout: 3000
+          writetimeout: 5000
+  application:
+    security:
+      jwt:
+        secret-key: &9}em:oG8<*>BDKyqmZ60zl|p]/q|u#_Sl^t>X6HJuH9w{`#4RGuaRAQ!#=!u!q
+        expiration: 8640000
+    mailing:
+      frontend:
+        activation-url: http:localhost:1300/active-account
+  server:
+    port: 9191
+
+
